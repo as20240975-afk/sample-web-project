@@ -1,0 +1,25 @@
+name:Continous Integration
+on:
+push:
+branches:
+-main
+
+jobs:
+runs-on:ubuntu-latest
+
+steps:
+
+-name:Checkout Respiratory
+ uses:actions/checkout@v4
+
+-name:Verify HTML File Exists
+ run: test -f index.html  
+
+-name:Verify CSS File Exists
+ run: test -f style.css 
+
+-name:Verify Java Script File Exists
+ run: test -f script.js  
+
+-name:CI successful
+ run: echo "Website passed Validation"
